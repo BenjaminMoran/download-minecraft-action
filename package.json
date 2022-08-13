@@ -1,0 +1,28 @@
+{
+  "name": "download-minecraft-action",
+  "version": "0.1.0",
+  "description": "GitHub Action to download Minecraft",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "prepare": "ncc build src/main.js --license licenses.txt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenjaminMoran/download-minecraft-action.git"
+  },
+  "author": "Benjamin Moran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BenjaminMoran/download-minecraft-action/issues"
+  },
+  "homepage": "https://github.com/BenjaminMoran/download-minecraft-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.9.1",
+    "@actions/http-client": "^2.0.1",
+    "@actions/io": "^1.1.2"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.34.0"
+  }
+}

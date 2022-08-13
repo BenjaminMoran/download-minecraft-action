@@ -1,0 +1,21 @@
+name: 'Download Minecraft: Java Edition'
+description: Download Minecraft client/server JARs and source maps
+author: Benjamin Moran
+inputs:
+  version:
+    required: true
+    description: Minecraft version to download
+  files:
+    required: true
+    description: Keys of the files to download, space-separated
+  destination:
+    required: false
+    description: Directory to download into
+outputs:
+  output-paths:
+    description: Paths to the files downloaded, space-separated
+runs:
+  using: node16
+  main: dist/index.js
+branding:
+  icon: download

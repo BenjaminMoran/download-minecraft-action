@@ -1,0 +1,33 @@
+name: Test this action
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - releases/**
+
+env:
+  MINECRAFT_VERSION: '1.19.2'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ./
+        id: download-minecraft
+        with:
+          minecraft-version: ${{ env.MINECRAFT_VERSION }}
+          keys: client server client_mappings server_mappings
+          destination: minecraft
+
+      - name: Check output paths
+        run: test '${{ steps.download-minecraft.outputs.output-paths }}' = $'minecraft/client.jar\nminecraft/server.jar\nminecraft/client_mappings.txt\nminecraft/server_mappings.txt'
+
+      - name: Check that files have been downloaded
+        run: |
+          paths="${{ steps.download-minecraft.outputs.output-paths }}"
+          for path in $paths; do test -s "$path"; done
