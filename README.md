@@ -44,7 +44,7 @@ name: Log Minecraft size
 on: workflow_dispatch
 
 jobs:
-  build:
+  run:
     runs-on: ubuntu-latest
 
     steps:
@@ -57,7 +57,7 @@ jobs:
           path: minecraft
           key: minecraft-1.19.2-client
 
-      - if: steps.cache-minecraft.outputs.cache-hit == 'false'
+      - if: steps.cache-minecraft.outputs.cache-hit != 'true'
         uses: BenjaminMoran/download-minecraft-action@v1
         with:
           version: '1.19.2'
