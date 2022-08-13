@@ -21,7 +21,7 @@ jobs:
         id: download-minecraft
         with:
           version: ${{ env.MINECRAFT_VERSION }}
-          keys: client server client_mappings server_mappings
+          files: client server client_mappings server_mappings
           destination: minecraft
 
       - name: Check output paths
