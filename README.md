@@ -18,7 +18,7 @@ comprise most of the absences.
 
 ### Inputs
 
-* **minecraft-version** (_required_) – Minecraft version to download, e.g.
+* **version** (_required_) – Minecraft version to download, e.g.
   `1.19.2`, `21w37a`, `1.17-pre1`. The full list of available versions is in the
   [version manifest].
 

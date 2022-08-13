@@ -20,7 +20,7 @@ jobs:
       - uses: ./
         id: download-minecraft
         with:
-          minecraft-version: ${{ env.MINECRAFT_VERSION }}
+          version: ${{ env.MINECRAFT_VERSION }}
           keys: client server client_mappings server_mappings
           destination: minecraft
 
